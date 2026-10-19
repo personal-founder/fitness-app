@@ -1,0 +1,92 @@
+fix(auth): replace duplicate login code and clear stale sessions
+
+Summary
+- Route login through the existing authentication provider and clear all
+  local session state when signing out. A signed-out user can no longer
+  return to a cached account screen with the Back button.
+
+Problem and rationale
+- Login and logout maintained separate copies of session-handling logic.
+  The logout path removed the access token but left the cached account
+  object and refresh timer active. Navigation could display stale account
+  details, and a pending refresh could restore local session state.
+- Reuse the existing provider's session lifecycle so credential storage,
+  refresh cancellation, and state notifications have one owner.
+
+Changes
+- Added a small login adapter around the existing provider.
+- Changed logout to cancel refresh work, clear credential/account caches,
+  and reset navigation before completing. Repeated logout remains safe.
+- Removed the legacy login implementation and duplicated logout branches.
+- Reused the provider's validation and error mapping; no new auth library.
+- Added regression coverage for stale navigation, pending refresh, repeated
+  logout, and a failed remote revocation request. Local sign-out completes
+  even when the remote request fails; the failure remains observable.
+
+File ledger
+Path | Action | Purpose and reason | LOC
+README.md | Edited | Update authentication documentation links after removing the legacy flow. | +4 -2 LOC
+docs/adr/0003-centralize-session-ownership.md | Added | Record why the provider owns session state and why a second state store was rejected. | +26 -0 LOC
+docs/authentication.md | Edited | Explain sign-out ordering and remote-revocation failure behavior. | +5 -0 LOC
+src/auth/authenticate.ts | Added | Delegate login to the provider; replace src/auth/legacy-login.ts. | +35 -0 LOC
+src/auth/legacy-login.ts | Removed | Remove duplicate login handling now covered by src/auth/authenticate.ts. | +0 -170 LOC
+src/auth/sign-out.ts | Edited | Replace duplicated cleanup with provider-owned teardown and navigation reset. | +38 -170 LOC
+tests/auth/session.test.ts | Added | Cover provider delegation, cache cleanup, and refresh cancellation. | +76 -0 LOC
+tests/auth/sign-out.test.ts | Added | Reproduce stale navigation and verify repeated/offline logout behavior. | +41 -0 LOC
+Totals: 8 files; 4 added, 3 edited, 1 removed; +225 -342 LOC; net -117.
+Generated/lockfile subtotal: +0 -0 LOC.
+Non-text changes: None.
+
+Verification
+- Validated tree: <full staged tree ID supplied by the gate>.
+- Comparison base: <full parent commit ID supplied by the gate>.
+- Environment: <actual toolchain, lockfile identity, configuration, and
+  Windows/macOS runner versions supplied by the gate>.
+- pwsh -File scripts/verify.ps1 -Target All | PASS | Static checks,
+  72 unit tests, 14 integration tests, 6 end-to-end scenarios; 0 failed,
+  0 skipped. Android/iOS/Windows/macOS builds completed. | 8m 42s.
+- Functional checks: Open account details, sign out, press Back, and
+  restart the app. The login screen remains visible and account details
+  stay cleared. Repeat with remote revocation unavailable; local sign-out
+  still completes. <Actual devices/OS versions recorded in evidence>.
+- Evidence: <durable report location, run ID, timestamp and time zone>.
+- Gate: PASS; all required checks completed for this snapshot.
+
+Decisions and ADRs
+- Accepted ADR 0003, docs/adr/0003-centralize-session-ownership.md.
+- Keep session ownership in the existing provider. A second state store
+  would duplicate lifecycle rules and require synchronization.
+- Complete local logout even if remote revocation fails. This prevents a
+  network outage from keeping private account details visible. Immediate
+  server-side revocation still depends on reaching the service.
+
+Dependencies and downloads
+- No dependency changes or deliberate tool/asset downloads.
+- Verification restored existing dependencies from the unchanged lockfile;
+  no new versions, licenses, permissions, or external services introduced.
+
+Compatibility, security, and operations
+- No public API, database, permission, or storage-format changes.
+- Supported clients continue to use the same provider interface.
+- Credential contents and account data are excluded from diagnostics.
+- No deployment sequencing or migration required. No performance claim;
+  fewer lines alone do not establish faster execution.
+
+Not included and remaining risks
+- Signing out every device remains outside this local-session fix. That
+  feature requires a separate server-side session-management design.
+- During a network outage, remote tokens remain subject to existing server
+  expiry/revocation rules. Local caches and refresh work are still cleared.
+
+Next steps
+1. Design all-device sign-out in a separate change. Define revocation,
+   offline behavior, and cross-device tests before implementation.
+
+Rollback
+- Revert this commit and rerun the full gate plus the logout smoke checks.
+  No data migration is required. Reversion restores the stale-session bug;
+  prefer a forward fix unless a more serious regression requires rollback.
+
+References
+- docs/adr/0003-centralize-session-ownership.md
+- docs/authentication.md

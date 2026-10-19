@@ -1,0 +1,61 @@
+<type>(<scope>): <specific change in imperative form>
+
+Summary
+- <What changed and the user/developer outcome.>
+
+Problem and rationale
+- <Previous behavior, concrete failure/need, why this approach.>
+
+Changes
+- Added: <Behavior, components, safeguards; or None with reason.>
+- Changed: <Behavior and important implementation details.>
+- Removed: <What became unnecessary and its replacement; or None.>
+- Reused/simplified: <Existing capability reused and complexity removed.>
+
+File ledger
+Path | Action | Purpose and reason | LOC
+<repo/path> | <Added/Edited/Removed/Renamed/Copied/Mode changed/Type changed> | <Specific explanation> | +<added> -<deleted> LOC
+Totals: <files> files; <action counts>; +<added> -<deleted> LOC; net <delta>.
+Generated/lockfile subtotal: +<added> -<deleted> LOC; or None.
+Non-text changes: <Binary/LFS/submodule/mode details; or None.>
+
+Verification
+- Validated tree: <full staged tree object ID>.
+- Comparison base: <full parent/base commit ID, or EMPTY TREE for first commit>.
+- Environment: <OS/architecture, toolchain versions, lockfile identity/configuration>.
+- <Exact command> | PASS | <Actual counts/targets/results> | <Duration>.
+- Functional checks: <Critical paths, devices/method, observed outcome>.
+- Evidence: <Stable sanitized report location/run ID, timestamp/time zone>.
+- Gate: PASS; all required checks completed for this snapshot.
+
+Decisions and ADRs
+- <Decision, alternatives, reason, tradeoff, ADR path/status; or None with reason.>
+
+Dependencies and downloads
+- <Added/updated/removed name/version; source, purpose, license, integrity,
+  scope/data impact and record path. Include deliberate temporary downloads.>
+- <If none, explicitly state none; distinguish locked dependency restoration.>
+
+Compatibility, security, and operations
+- <API/data/platform compatibility; privacy/permissions; migration/deployment
+  impact; measured performance changes or No performance claim.>
+
+Not included and remaining risks
+- <Deferred work, reason, impact and tracking reference; or None.>
+- <Known non-blocking limitation and mitigation; or None.>
+
+Next steps
+1. <Specific follow-up, dependency, acceptance criterion and owner if known.>
+
+Rollback
+- <How to undo safely, migration/data consequences, verification afterward.>
+
+References
+- <Relevant issues, specifications, ADRs and evidence; no invented identifiers.>
+
+# Replace every placeholder. Retain every section; use None/N/A with a reason.
+# No email address is required in the message; keep personal addresses out.
+# Delete these instructions and unused trailer examples before committing.
+# Optional real trailers belong at the very end, separated by one blank line.
+# Refs: <existing issue reference>
+# BREAKING CHANGE: <affected consumers and required migration>
