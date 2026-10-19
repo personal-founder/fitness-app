@@ -2,7 +2,7 @@
 metadata_version: 1
 purpose: Index the engineering decisions committed in this change sequence.
 owner: unassigned
-related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005, ADR-0006, ADR-0007, ADR-0008, ADR-0009, ADR-0010, ADR-0011, ADR-0012, ADR-0031, ADR-0041]
+related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005, ADR-0006, ADR-0007, ADR-0008, ADR-0009, ADR-0010, ADR-0011, ADR-0012, ADR-0031, ADR-0039, ADR-0040, ADR-0041]
 ---
 # Decision index
 
@@ -23,6 +23,8 @@ Exactly one decision belongs in each ADR; complete records stay below 250 lines.
 | ADR-0011 | [Combine matching evidence from trusted platform runners](0011-platform-evidence.md) | accepted |
 | ADR-0012 | [Run the shared gate across suitable CI hosts](0012-verification-ci.md) | accepted |
 | ADR-0031 | [Isolate working-copy checks from user source](0031-working-copy-isolation.md) | accepted |
+| ADR-0039 | [Batch routine validation at the end of coherent work](0039-end-of-work-validation.md) | accepted |
+| ADR-0040 | [Avoid redundant and competing engineering work](0040-efficient-execution.md) | accepted |
 | ADR-0041 | [Authorize three local commits with blocked verification](0041-three-local-commit-exception.md) | accepted |
 
 ## Existing adoption gaps

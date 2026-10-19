@@ -2,7 +2,7 @@
 metadata_version: 1
 purpose: Preserve the detailed reusable engineering principles linked by AGENTS.md.
 owner: unassigned
-related_adrs: [ADR-0002]
+related_adrs: [ADR-0002, ADR-0039, ADR-0040]
 ---
 # Core engineering principles
 
@@ -27,6 +27,27 @@ Follow [AGENTS.md](../AGENTS.md) and the [ATOMIC policy](atomic-and-adr-policy.m
 - Prefer one obvious workflow for setup, build, test, and release. Automate repeatable work after understanding it.
 - Modern means supported, appropriate, and maintainable; it does not mean adopting every new framework or performing unrelated upgrades.
 
+### Efficient execution
+
+- MUST choose the smallest complete workflow that satisfies the authorized scope.
+  Batch related reads and edits; reuse applicable patterns, research, and records.
+  Do not expand a narrow task into unrelated cleanup or extra infrastructure.
+- MUST plan validation once, including likely prerequisites and expensive steps.
+  Do not run overlapping release builds or heavyweight suites that compete for
+  the same machine resources. Parallelize only independent work with capacity.
+- MUST avoid repeating successful checks without a relevant change, new failure,
+  changed environment, or explicit gate requirement. Reuse evidence only for the
+  inputs and environment it actually covers; changed snapshots invalidate it.
+- MUST stop repeating a known blocked operation until its prerequisite changes.
+  Record the blocker and continue independent work; a required blocked check
+  remains BLOCKED and cannot authorize completion, committing, or release.
+- Use bounded waits and useful progress updates instead of frequent unchanged
+  polling. Report commands, durations when useful, failures, and remaining work;
+  never equate speed with skipped requirements or unsupported success claims.
+- Verification method: review command history, changed inputs, check durations,
+  and the work record for redundant or competing runs. Evidence: actual task
+  logs/reports. Enforcement: manual process review; time savings are unverified
+  until measured on later work.
 
 ## 4. Boy Scout rule — Improve what you touch
 
@@ -58,3 +79,32 @@ Follow [AGENTS.md](../AGENTS.md) and the [ATOMIC policy](atomic-and-adr-policy.m
 - Keep output concise and actionable: command, outcome, relevant counts, duration when useful, and sanitized failure details. Keep full bulky reports in the appropriate artifact store with retention limits.
 - Documentation-only changes need factual/link/consistency review, not artificial unit tests. Declarative files, generated files, and native UI may need schema validation, generation checks, platform tools, or manual checks; record the method.
 - Validate release-critical behavior on real supported devices when hardware, sensors, background execution, permissions, or OS integration matter. Clearly label emulation and viewport simulation; they do not prove physical-device behavior.
+
+### Validation scheduling and fix loop
+
+- MUST defer routine test execution, full analysis, broad validation, and release
+  builds until the coherent implementation, test changes, documentation, metadata,
+  and ADRs are ready for review. Write needed tests with the code; run them during
+  the final validation phase rather than repeatedly after every small edit.
+- Early exceptions are limited to cheap prerequisite checks or a focused defect
+  reproduction/technical spike that resolves material risk, security uncertainty,
+  or a likely wrong approach. Follow an explicit request for an earlier check.
+  Record why the early check is necessary; do not launch the full gate for it.
+- At the end, inspect the diff and run applicable checks in increasing cost order:
+  document/schema/format checks, static analysis, affected tests, required broader
+  suites, then expensive builds/device checks. Use canonical project commands.
+  This orders work; it does not remove checks required by the shared gate.
+- After failures, diagnose and fix in-scope causes, then rerun the failing checks
+  and checks invalidated by the fix. Broaden again only when affected contracts,
+  risk, or the final commit/release gate requires it. Never rerun everything merely
+  because another check finished or an unrelated file was viewed.
+- Before an expensive run, confirm prerequisites and a stable candidate. If other
+  work changes its inputs, mark its evidence stale; retain useful diagnostics
+  without treating them as proof of the changed candidate.
+- Finish only with applicable checks passing or explicit FAIL/BLOCKED limitations.
+  Failed, missing, skipped, stale, or blocked required checks still prevent a
+  commit/release. Documentation-only work uses document checks before handoff;
+  any later commit must still satisfy the complete existing commit policy.
+- Verification method: inspect the edit/check sequence and fix/rerun rationale.
+  Evidence: command outcomes and the task work record. Enforcement: manual process
+  review; the existing shared verifier and hooks retain their current behavior.

@@ -2,7 +2,7 @@
 metadata_version: 1
 purpose: Explain the shared verifier, policy, evidence, and local hook lifecycle.
 owner: unassigned
-related_adrs: [ADR-0006, ADR-0007, ADR-0008, ADR-0009, ADR-0010, ADR-0011, ADR-0012]
+related_adrs: [ADR-0006, ADR-0007, ADR-0008, ADR-0009, ADR-0010, ADR-0011, ADR-0012, ADR-0039, ADR-0040]
 ---
 # Verification
 
@@ -163,6 +163,13 @@ Binary ledger rows use `LOC: N/A (binary)` and include exact sizes as
 `LFS sha256:` followed by the object ID; text counts describe the pointer only.
 
 ## Maintenance and validation
+
+Follow [validation scheduling and the fix loop](core-principles.md#validation-scheduling-and-fix-loop)
+and [efficient execution](core-principles.md#efficient-execution). Finish related
+edits before routine validation, check inexpensive prerequisites early, and reserve
+expensive builds for the stable candidate. Fix failures, then rerun affected checks.
+This scheduling policy changes no verifier command, required target, hook, or
+evidence-matching rule. A known blocked prerequisite remains a commit blocker.
 
 See [the tracker](engineering-improvements.md) and
 [implementation evidence](changes/verification-implementation.md).

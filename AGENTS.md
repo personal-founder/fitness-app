@@ -2,7 +2,7 @@
 metadata_version: 1
 purpose: Route repository work to the mandatory engineering and decision standards.
 owner: unassigned
-related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005, ADR-0006, ADR-0007, ADR-0008]
+related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005, ADR-0006, ADR-0007, ADR-0008, ADR-0039, ADR-0040]
 ---
 # AGENTS.md — Fitness App Engineering Rules
 
@@ -36,7 +36,7 @@ This file and its mandatory linked standards govern the entire Fitness App works
 3. **Research proportionately.** Before generating code, check existing project patterns and relevant official documentation for the selected technology/version. Browse current primary sources for unfamiliar APIs, dependencies, security-sensitive choices, platform policies, or recommendations likely to have changed. Reuse still-applicable recorded research; do not research every trivial edit from scratch.
 4. **Choose the simplest adequate approach.** Reuse first. Compare alternatives when a decision has lasting cost. Explain why extra complexity is necessary. Record architectural decisions as described below.
 5. **Implement complete behavior.** Include validation, errors, permissions, loading/empty states, recovery, and meaningful tests. Keep edits focused and reviewable. Improve safe nearby issues as you work.
-6. **Validate the change.** Run applicable checks, fix failures, and record actual results and limitations. Never weaken required gates.
+6. **Validate at the end, then fix.** Finish the coherent change and its tests/docs before routine validation; run checks from cheap to expensive, fix failures, and rerun affected checks. Follow [validation scheduling](docs/core-principles.md#validation-scheduling-and-fix-loop); never weaken required gates.
 7. **Record and report.** Update affected documentation and records. Report changed behavior, verification evidence, unresolved issues, and next actions. Distinguish implemented, tested, simulated, assumed, blocked, and not applicable.
 
 If a needed tool, credential, device, source, or environment is unavailable, continue independent work and report the precise limitation. Never fabricate success or silently substitute an unrelated check.
@@ -50,6 +50,7 @@ MUST read the full rules in [core engineering principles](docs/core-principles.m
 
 Use the simplest adequate design; justify complexity and optimize measured bottlenecks.
 MUST read the full rules in [core engineering principles](docs/core-principles.md).
+MUST follow [efficient execution](docs/core-principles.md#efficient-execution): batch related work, reuse evidence within its valid scope, and avoid redundant or competing expensive runs.
 
 ## 4. Boy Scout rule — Improve what you touch
 
