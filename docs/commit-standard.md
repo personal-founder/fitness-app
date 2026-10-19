@@ -1,15 +1,23 @@
+---
+metadata_version: 1
+purpose: Define detailed commit messages and evidence required before committing.
+owner: unassigned
+related_adrs: [ADR-0003, ADR-0004, ADR-0005]
+---
+
 # Commit standard
 
-Status: adopted policy and template; automated enforcement is not installed.
+Status: policy adopted. Inspect local enforcement separately; policy prose alone
+does not prove installed hooks, passing verification, or remote protection.
 Last researched: 2026-10-19.
 
-This standard applies to all commits in the Fitness App repository, including amendments, reverts, and the final messages produced by squash/merge workflows. Follow applicable workspace instructions, use [the template](../.gitmessage), and see [the illustrative message](examples/commit-message.txt). General engineering instructions remain outside this initial commit-policy snapshot. A request to improve this policy does not authorize staging, committing, initializing Git, or publishing.
+This standard applies to all commits in the Fitness App repository, including amendments, reverts, and final squash/merge messages. Follow [AGENTS.md](../AGENTS.md), [the ATOMIC/ADR policy](atomic-and-adr-policy.md), and [file metadata](file-metadata.md); use [the template](../.gitmessage) and [the illustrative message](examples/commit-message.txt). Changing this policy does not authorize staging, committing, initializing Git, or publishing.
 
 ## 1. Purpose and current enforcement status
 
 Each commit must let a reviewer understand the problem, the solution, every changed file, the evidence that it works, important tradeoffs, and remaining work without reconstructing a chat. Detailed explanations supplement the diff; they must not contradict it or replace code review.
 
-As inspected on 2026-10-19, this workspace has documentation and mockups, an initialized Git repository connected to `https://github.com/personal-founder/fitness-app.git`, and no application manifests or build/test pipeline. This initial snapshot contains only the commit standard, template, and illustrative example. No hook, build command, successful app test, or remote protection is implied by these files. Do not create a fake always-green check to fill this gap.
+The initial commit-policy snapshot on 2026-10-19 contained only this standard, template, and example, with Git initialized and no app manifests. The workspace now also contains Flutter application files and `pubspec.yaml`; that historical documentation-only exemption no longer describes the live workspace. Inspect actual scripts, supported targets, hooks, and CI before committing. These policy files do not prove any gate is installed or passing; never create a fake always-green check.
 
 The project policy is **no commit with a failed, blocked, missing, stale, or skipped required check**. This is stronger than merely requiring green checks before merging. Local hooks can be bypassed by Git options or configuration; they are useful controls, not an absolute security boundary. Remote CI and protected branches provide a second enforcement layer once hosting exists. Their existence alone does not validate local commits before creation. [Git hooks](https://git-scm.com/docs/githooks), [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
@@ -66,6 +74,12 @@ Use these headings and this order, exactly as in the template:
 | Next steps | Ordered, actionable work with acceptance criteria, dependencies and owner if known; no invented commitments |
 | Rollback | Reversal procedure, data consequences, follow-on dependencies and verification |
 | References | Real issue/specification/ADR/report references; None with reason if absent |
+
+Every changed file MUST map to a new or reused ADR in Decisions and ADRs. Record
+each independent choice automatically, including small changes; one ADR contains
+one decision. Verify the mandatory template, 249-line maximum, metadata, index,
+and references. Reusing a governing decision is explicit coverage, not "no ADR."
+Do not invent new decisions for repeated implementation of an existing rule.
 
 Final Git trailers, if any, go after a blank line below References. Do not repeat every detail in multiple sections. Use repository-relative paths and durable links. A commit body can be the canonical work record for the committed change; use a separate change document only when it adds persistent operational value. Keep ADRs and dependency records as canonical detailed records and summarize their relevant changes here.
 

@@ -29,7 +29,9 @@ Verification
 - Gate: PASS; all required checks completed for this snapshot.
 
 Decisions and ADRs
-- <Decision, alternatives, reason, tradeoff, ADR path/status; or None with reason.>
+- <Each changed path | ADR ID/path | new/reused/superseded | why it applies.>
+- <Each new decision: alternatives, reason, tradeoff, status, and verification.>
+- <Confirm atomic scope, required ADR template, maximum 249 lines, and file metadata.>
 
 Dependencies and downloads
 - <Added/updated/removed name/version; source, purpose, license, integrity,
