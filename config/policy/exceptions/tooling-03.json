@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "tool/verification/commit_message.dart",
+      "max_lines": 150,
+      "reason": "One cohesive commit-message contract validator; preserve its shared validation boundary and review if responsibilities grow.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/ledger.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/checks.dart",
+      "max_lines": 150,
+      "reason": "Keep one cohesive verification responsibility or command registry together; split unrelated behavior instead of relaxing this bound.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "test/tooling/isolation_test.dart",
+      "max_lines": 150,
+      "reason": "Keep the source-preservation and owned-temporary-cleanup regression fixtures together as one focused safety contract.",
+      "adr": "ADR-0009"
+    }
+  ]
+}

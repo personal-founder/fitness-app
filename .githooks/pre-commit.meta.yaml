@@ -1,0 +1,5 @@
+metadata_version: 1
+target: pre-commit
+purpose: Enforce the shared verification gate at Git pre-commit.
+owner: unassigned
+related_adrs: [ADR-0010]

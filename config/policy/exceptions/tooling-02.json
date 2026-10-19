@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "tool/verification/receipts.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/registry_schema.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/requirements.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/worker.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "test/tooling/commit_test.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "test/tooling/metadata_test.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "test/tooling/receipt_test.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "test/tooling/support.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    }
+  ]
+}

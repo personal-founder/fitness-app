@@ -1,0 +1,29 @@
+{
+  "required": [
+    "metadata_version",
+    "purpose",
+    "owner",
+    "related_adrs"
+  ],
+  "optional": [
+    "source",
+    "generated_by",
+    "data_classification",
+    "replaces",
+    "validation",
+    "target",
+    "template_version",
+    "id",
+    "title",
+    "status",
+    "date",
+    "decision_basis",
+    "implementation",
+    "supersedes",
+    "superseded_by"
+  ],
+  "version": 1,
+  "sidecar_suffix": ".meta.yaml",
+  "adrs": "docs/adr",
+  "template": "docs/adr/adr-template.md"
+}

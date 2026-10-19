@@ -1,0 +1,77 @@
+{
+  "web": {
+    "hosts": [
+      "windows",
+      "linux",
+      "macos"
+    ],
+    "args": [
+      "build",
+      "web",
+      "--release",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  },
+  "android": {
+    "hosts": [
+      "linux"
+    ],
+    "args": [
+      "build",
+      "apk",
+      "--release",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  },
+  "ios": {
+    "hosts": [
+      "macos"
+    ],
+    "args": [
+      "build",
+      "ios",
+      "--release",
+      "--no-codesign",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  },
+  "windows": {
+    "hosts": [
+      "windows"
+    ],
+    "args": [
+      "build",
+      "windows",
+      "--release",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  },
+  "macos": {
+    "hosts": [
+      "macos"
+    ],
+    "args": [
+      "build",
+      "macos",
+      "--release",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  },
+  "linux": {
+    "hosts": [
+      "linux"
+    ],
+    "args": [
+      "build",
+      "linux",
+      "--release",
+      "--no-pub"
+    ],
+    "timeout_seconds": 1800
+  }
+}

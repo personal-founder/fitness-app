@@ -2,13 +2,17 @@
 metadata_version: 1
 purpose: Define detailed commit messages and evidence required before committing.
 owner: unassigned
-related_adrs: [ADR-0003, ADR-0004, ADR-0005]
+related_adrs: [ADR-0003, ADR-0004, ADR-0005, ADR-0008]
 ---
 
+Executable fields, statuses, commit contracts, and limits are defined in the
+[machine-readable policy](../config/engineering-policy.json). Read its referenced
+registries before changing this standard or its validators.
 # Commit standard
 
-Status: policy adopted. Inspect local enforcement separately; policy prose alone
-does not prove installed hooks, passing verification, or remote protection.
+Status: policy adopted; local enforcement implementation and actual checks are
+recorded in [verification evidence](changes/verification-implementation.md).
+Run [the shared verifier](verification.md); remote protection remains unverified.
 Last researched: 2026-10-19.
 
 This standard applies to all commits in the Fitness App repository, including amendments, reverts, and final squash/merge messages. Follow [AGENTS.md](../AGENTS.md), [the ATOMIC/ADR policy](atomic-and-adr-policy.md), and [file metadata](file-metadata.md); use [the template](../.gitmessage) and [the illustrative message](examples/commit-message.txt). Changing this policy does not authorize staging, committing, initializing Git, or publishing.

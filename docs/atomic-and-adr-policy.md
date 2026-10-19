@@ -2,9 +2,12 @@
 metadata_version: 1
 purpose: Define atomic work and automatic decision coverage for every repository change.
 owner: unassigned
-related_adrs: [ADR-0002, ADR-0003, ADR-0004]
+related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0008]
 ---
 
+Executable fields, statuses, commit contracts, and limits are defined in the
+[machine-readable policy](../config/engineering-policy.json). Read its referenced
+registries before changing this standard or its validators.
 # ATOMIC and automatic decision records
 
 Read this policy before choosing or changing anything in the repository.

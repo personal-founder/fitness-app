@@ -1,0 +1,5 @@
+metadata_version: 1
+target: setup-flutter.sh
+purpose: Obtain the policy-pinned official SDK for verification-only CI jobs.
+owner: unassigned
+related_adrs: [ADR-0012]

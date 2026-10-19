@@ -1,0 +1,5 @@
+metadata_version: 1
+target: exceptions.json
+purpose: Define the exceptions verification policy registry.
+owner: unassigned
+related_adrs: [ADR-0008]

@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "config/policy/platforms.json",
+      "max_lines": 150,
+      "reason": "Keep the complete required-target host matrix together as one coherent registry.",
+      "adr": "ADR-0008"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Verification outputs and local-only sensitive configuration.
+output/
+.dart_tool/
+build/
+coverage/
+.pub-cache/
+.pub/
+.flutter-plugins-dependencies
+config/public.local.json
+.env
+.env.*
+!.env.example

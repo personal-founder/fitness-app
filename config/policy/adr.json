@@ -1,0 +1,39 @@
+{
+  "required": [
+    "template_version",
+    "id",
+    "title",
+    "status",
+    "date",
+    "decision_basis",
+    "implementation",
+    "supersedes",
+    "superseded_by"
+  ],
+  "statuses": [
+    "proposed",
+    "accepted",
+    "rejected",
+    "superseded",
+    "deprecated"
+  ],
+  "implementations": [
+    "planned",
+    "partial",
+    "implemented",
+    "not-applicable"
+  ],
+  "headings": [
+    "Decision",
+    "Context and drivers",
+    "Scope",
+    "Options and rationale",
+    "Consequences",
+    "Implementation and traceability",
+    "Verification",
+    "Reversal and revisit",
+    "References"
+  ],
+  "template_version": 1,
+  "index": "docs/adr/README.md"
+}

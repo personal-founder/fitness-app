@@ -1,0 +1,5 @@
+metadata_version: 1
+target: verify-shard.sh
+purpose: Collect host-specific gate evidence while retaining incomplete-target outcomes.
+owner: unassigned
+related_adrs: [ADR-0012]

@@ -1,0 +1,45 @@
+{
+  "types": [
+    "feat",
+    "fix",
+    "refactor",
+    "perf",
+    "test",
+    "docs",
+    "build",
+    "ci",
+    "style",
+    "chore",
+    "revert"
+  ],
+  "sections": [
+    "Summary",
+    "Problem and rationale",
+    "Changes",
+    "File ledger",
+    "Verification",
+    "Decisions and ADRs",
+    "Dependencies and downloads",
+    "Compatibility, security, and operations",
+    "Not included and remaining risks",
+    "Next steps",
+    "Rollback",
+    "References"
+  ],
+  "actions": [
+    "Added",
+    "Edited",
+    "Removed",
+    "Renamed",
+    "Copied",
+    "Mode changed",
+    "Type changed"
+  ],
+  "forbidden_patterns": [
+    "\\b(?:AI|ChatGPT|Codex|OpenAI|Claude)\\b",
+    "generated[- ]by",
+    "<[^>\\n]+>",
+    "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b"
+  ],
+  "subject_max": 72
+}

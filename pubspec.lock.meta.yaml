@@ -1,0 +1,6 @@
+metadata_version: 1
+target: pubspec.lock
+purpose: Preserve resolved dependency versions and registry integrity for reproducible verification.
+owner: unassigned
+related_adrs: [ADR-0008]
+generated_by: Flutter pub get with the policy-pinned SDK.

@@ -1,0 +1,14 @@
+{
+  "flutter": "3.47.7",
+  "dart": "3.13.5",
+  "flutter_revision": "abaf9c523780a608bd46686fd5e53740a07077f8",
+  "repository": "https://github.com/flutter/flutter.git",
+  "restore": [
+    "pub",
+    "get",
+    "--enforce-lockfile"
+  ],
+  "timeout_seconds": 600,
+  "evidence_max_age_seconds": 86400,
+  "evidence_future_skew_seconds": 300
+}

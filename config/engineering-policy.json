@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "registries": {
+    "toolchain": "config/policy/toolchain.json",
+    "limits": "config/policy/limits.json",
+    "metadata": "config/policy/metadata.json",
+    "adr": "config/policy/adr.json",
+    "commit": "config/policy/commit.json",
+    "checks": "config/policy/checks.json",
+    "platforms": "config/policy/platforms.json",
+    "exceptions": "config/policy/exceptions.json",
+    "requirements": "config/policy/requirements.json"
+  },
+  "requirements_dir": "config/policy/requirements",
+  "policy_sources": [
+    "AGENTS.md",
+    "docs/core-principles.md",
+    "docs/engineering-standards.md",
+    "docs/atomic-and-adr-policy.md",
+    "docs/file-metadata.md",
+    "docs/commit-standard.md",
+    "docs/verification.md",
+    "docs/engineering-improvements.md"
+  ]
+}

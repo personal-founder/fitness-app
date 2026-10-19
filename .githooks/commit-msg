@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+root="$(git rev-parse --show-toplevel)"
+cd "$root"
+message="$1"
+sdk="$(git config --get macro.verifySdk || true)"
+dart_bin="${sdk:+$sdk/bin/cache/dart-sdk/bin/}dart"
+if [ -f "$dart_bin.exe" ]; then dart_bin="$dart_bin.exe"; fi
+set -- --staged "--message=$message"
+if [ -n "${MACRO_VERIFY_BASE:-}" ]; then set -- "$@" "--base=$MACRO_VERIFY_BASE"; fi
+exec "$dart_bin" tool/verify.dart "$@"

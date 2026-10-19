@@ -1,0 +1,5 @@
+metadata_version: 1
+target: requirements.json
+purpose: Define mandatory-rule record fields and evidence states.
+owner: unassigned
+related_adrs: [ADR-0006, ADR-0008]

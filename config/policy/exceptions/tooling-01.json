@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "tool/verification/adr_checks.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/bootstrap.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/changes.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/command.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/file_checks.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/hook_install.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/metadata.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    },
+    {
+      "path": "tool/verification/policy.dart",
+      "max_lines": 150,
+      "reason": "Keep this focused verification responsibility and its failure handling together; no unrelated behavior is bundled.",
+      "adr": "ADR-0007"
+    }
+  ]
+}

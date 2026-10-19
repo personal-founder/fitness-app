@@ -2,9 +2,12 @@
 metadata_version: 1
 purpose: Define concise file metadata without breaking native formats or duplicating history.
 owner: unassigned
-related_adrs: [ADR-0005]
+related_adrs: [ADR-0005, ADR-0008]
 ---
 
+Executable fields, statuses, commit contracts, and limits are defined in the
+[machine-readable policy](../config/engineering-policy.json). Read its referenced
+registries before changing this standard or its validators.
 # File metadata standard
 
 Every repository-owned file MUST have associated metadata. For new/edited files,

@@ -1,0 +1,6 @@
+metadata_version: 1
+target: mandatory-0001.jsonl
+purpose: Register mandatory-rule evidence without inferring compliance.
+owner: unassigned
+related_adrs: [ADR-0006, ADR-0008]
+generated_by: dart tool/refresh_requirements.dart

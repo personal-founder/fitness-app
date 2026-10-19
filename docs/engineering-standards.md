@@ -39,6 +39,9 @@ No engineer or tool can guarantee zero vulnerabilities or zero leaks. MUST minim
 
 ## File-size limits
 
+Executable values live in [the policy registries](../config/engineering-policy.json).
+The verifier checks these published limits for consistency with that configuration.
+
 Apply these limits when creating, editing, reviewing, or preparing files for a commit. Keep each file focused and easy to understand.
 
 | File category | Default target | Justified extension | Exceptional size |

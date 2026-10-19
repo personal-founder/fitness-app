@@ -1,0 +1,65 @@
+# metadata_version: 1
+# purpose: Run the shared verifier on native hosts and require complete evidence.
+# owner: unassigned
+# related_adrs: [ADR-0012]
+
+name: Verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  shard:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: ubuntu-24.04, host: linux}
+          - {runner: windows-2022, host: windows}
+          - {runner: macos-15, host: macos}
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: bash .github/scripts/setup-flutter.sh
+      - if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libsecret-1-dev libjsoncpp-dev xvfb
+      - name: Run shared shard gate
+        run: |
+          if [ "${{ runner.os }}" = Linux ]; then
+            xvfb-run -a bash .github/scripts/verify-shard.sh "${{ matrix.host }}"
+          else
+            bash .github/scripts/verify-shard.sh "${{ matrix.host }}"
+          fi
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: verification-${{ matrix.host }}
+          path: output/verification/${{ matrix.host }}.json
+          if-no-files-found: error
+  aggregate:
+    needs: shard
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: bash .github/scripts/setup-flutter.sh
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          pattern: verification-*
+          path: output/verification/trusted
+          merge-multiple: true
+      - name: Require all matching platform evidence
+        shell: bash
+        run: |
+          base=$(git rev-parse --verify HEAD^ 2>/dev/null || printf empty)
+          dart tool/verify.dart --staged "--base=$base" --aggregate=output/verification/trusted

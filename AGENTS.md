@@ -2,7 +2,7 @@
 metadata_version: 1
 purpose: Route repository work to the mandatory engineering and decision standards.
 owner: unassigned
-related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005]
+related_adrs: [ADR-0002, ADR-0003, ADR-0004, ADR-0005, ADR-0006, ADR-0007, ADR-0008]
 ---
 # AGENTS.md — Fitness App Engineering Rules
 
@@ -76,6 +76,10 @@ Deliver purposeful, idiomatic, verified work; preserve truthful provenance and r
 MUST read the full rules in [core engineering principles](docs/core-principles.md).
 
 ## 8. Tests, evidence, and auditability
+
+A requirement is not implemented merely because it is documented. Every mandatory rule must identify its verification method, available evidence, and enforcement status. Unverified requirements must remain visibly unverified.
+
+Use `dart tool/verify.dart` and [the verification guide](docs/verification.md). [Machine-readable policy](config/engineering-policy.json) owns executable values; [the improvement tracker](docs/engineering-improvements.md) retains all eight items. Read their actual results before claiming enforcement or completion.
 
 MUST follow [the complete verification rules](docs/core-principles.md#8-tests-evidence-and-auditability): meaningful behavior/regression coverage, deterministic tests, actual project checks, honest results, and explicit device/environment limits.
 

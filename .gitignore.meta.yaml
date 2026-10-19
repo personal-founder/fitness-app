@@ -1,0 +1,5 @@
+metadata_version: 1
+purpose: Keep verification output, dependency caches, and local secrets out of history.
+owner: unassigned
+related_adrs: [ADR-0007, ADR-0009]
+target: .gitignore

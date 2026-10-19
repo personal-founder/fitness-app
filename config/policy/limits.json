@@ -1,0 +1,45 @@
+{
+  "code": {
+    "target": 74,
+    "extension": 150
+  },
+  "markdown": {
+    "target": 399,
+    "extension": 800
+  },
+  "adr": {
+    "target": 249,
+    "extension": 249
+  },
+  "code_extensions": [
+    ".dart",
+    ".py",
+    ".ps1",
+    ".sh",
+    ".json",
+    ".yaml",
+    ".yml",
+    ".toml",
+    ".sql",
+    ".kt",
+    ".swift",
+    ".cpp",
+    ".h",
+    ".gradle",
+    ".ts",
+    ".js"
+  ],
+  "exclude_prefixes": [
+    ".git/",
+    ".dart_tool/",
+    "build/",
+    "output/"
+  ],
+  "generated_patterns": [
+    ".g.dart",
+    ".freezed.dart",
+    "pubspec.lock"
+  ],
+  "diff_algorithm": "myers",
+  "rename_threshold": 50
+}

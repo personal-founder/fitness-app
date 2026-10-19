@@ -1,0 +1,22 @@
+{
+  "required": [
+    "id",
+    "source",
+    "line",
+    "rule",
+    "verification",
+    "evidence",
+    "enforcement",
+    "status"
+  ],
+  "enforcements": [
+    "automated",
+    "manual",
+    "partial",
+    "unenforced"
+  ],
+  "statuses": [
+    "verified",
+    "unverified"
+  ]
+}

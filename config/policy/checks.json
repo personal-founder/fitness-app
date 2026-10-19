@@ -1,0 +1,68 @@
+{
+  "format": {
+    "tool": "dart",
+    "args": [
+      "format",
+      "--output=none",
+      "--set-exit-if-changed"
+    ],
+    "paths": [
+      "lib",
+      "test",
+      "integration_test",
+      "tool"
+    ],
+    "timeout_seconds": 180
+  },
+  "analysis": {
+    "tool": "flutter",
+    "args": [
+      "analyze",
+      "--no-pub"
+    ],
+    "timeout_seconds": 300
+  },
+  "tooling": {
+    "tool": "flutter",
+    "args": [
+      "test",
+      "--no-pub",
+      "--machine",
+      "test/tooling"
+    ],
+    "directory": "test/tooling",
+    "exclude": [],
+    "timeout_seconds": 600
+  },
+  "application": {
+    "tool": "flutter",
+    "args": [
+      "test",
+      "--no-pub",
+      "--machine"
+    ],
+    "directory": "test",
+    "exclude": [
+      "test/tooling/",
+      "test/support/"
+    ],
+    "timeout_seconds": 600
+  },
+  "integration": {
+    "tool": "flutter",
+    "args": [
+      "test",
+      "--no-pub",
+      "--machine",
+      "integration_test"
+    ],
+    "directory": "integration_test",
+    "host_args": {
+      "windows": ["-d", "windows"],
+      "linux": ["-d", "linux"],
+      "macos": ["-d", "macos"]
+    },
+    "exclude": [],
+    "timeout_seconds": 900
+  }
+}
