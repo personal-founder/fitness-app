@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "path": "test/support/fakes.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "windows/CMakeLists.txt",
+      "max_lines": 108,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "windows/flutter/CMakeLists.txt",
+      "max_lines": 109,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "windows/runner/Runner.rc",
+      "max_lines": 121,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "windows/runner/win32_window.cpp",
+      "max_lines": 288,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "windows/runner/win32_window.h",
+      "max_lines": 102,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    }
+  ]
+}

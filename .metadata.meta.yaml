@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: "Maintain .metadata for Macro App authentication."
+owner: unassigned
+related_adrs: [ADR-0028]
+target: ".metadata"
+generated_by: Flutter 3.47.7 tooling; platform edits recorded in the work log.

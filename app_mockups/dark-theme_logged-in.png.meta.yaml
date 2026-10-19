@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: Preserve the existing workspace dark authentication reference.
+owner: unassigned
+related_adrs: [ADR-0013]
+target: dark-theme_logged-in.png
+source: Existing user-provided workspace artwork; original pixels unchanged.

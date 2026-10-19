@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: "Preserve the supplied Macro App design and implementation reference."
+owner: unassigned
+related_adrs: [ADR-0013, ADR-0024]
+target: "Macro_App_Dark_Approved.png"
+source: User-supplied implementation reference; preserved locally.

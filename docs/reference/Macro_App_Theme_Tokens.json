@@ -1,0 +1,45 @@
+{
+  "specStatus": "proposed visual color samples from approved raster mockups; tune after screenshot comparison",
+  "common": {
+    "layoutReferencePt": {
+      "width": 390,
+      "height": 844
+    },
+    "horizontalGutterPt": 16,
+    "headerButtonMinTouchPt": 44,
+    "avatarDiameterPt": 160,
+    "cardRadiusPt": 25,
+    "fieldHeightPt": 58,
+    "continueHeightPt": 54,
+    "accountTagFormat": "#[A-Z]{2}[0-9]{4}",
+    "accountTagMasked": "#••••••",
+    "demoDisplayName": "King James"
+  },
+  "light": {
+    "background": "#F5F9FF",
+    "card": "rgba(255,255,255,0.82)",
+    "input": "rgba(247,250,255,0.65)",
+    "text": "#071B42",
+    "secondaryText": "#60738E",
+    "border": "#D9E4F2",
+    "accent": "#2384EB",
+    "waveSoft": "#DCEBFF",
+    "waveMid": "#C6DDFF",
+    "waveStrong": "#9FC7FA",
+    "disabled": "#9AA6B9"
+  },
+  "dark": {
+    "background": "#1F2024",
+    "card": "rgba(43,45,49,0.88)",
+    "input": "#292B2F",
+    "text": "#F3F4F7",
+    "secondaryText": "#B0B8C5",
+    "border": "#464A52",
+    "accent": "#C84A5A",
+    "accessibleAccentText": "#D66B75",
+    "waveSoft": "#302329",
+    "waveMid": "#45252D",
+    "waveStrong": "#5A2B32",
+    "disabled": "#41444C"
+  }
+}

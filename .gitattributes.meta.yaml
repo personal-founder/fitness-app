@@ -1,0 +1,5 @@
+metadata_version: 1
+purpose: Preserve intentional Markdown hard breaks in the original imported UI handoff.
+owner: unassigned
+related_adrs: [ADR-0013, ADR-0025]
+target: .gitattributes

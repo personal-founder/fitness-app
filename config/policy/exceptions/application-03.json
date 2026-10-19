@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "linux/runner/my_application.cc",
+      "max_lines": 148,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "macos/Runner.xcodeproj/project.pbxproj",
+      "max_lines": 729,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+      "max_lines": 117,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "macos/Runner/Base.lproj/MainMenu.xib",
+      "max_lines": 343,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "pubspec.lock",
+      "max_lines": 1046,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/entry_widget_test.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/session_test.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/supabase_adapter_test.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    }
+  ]
+}

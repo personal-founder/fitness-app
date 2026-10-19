@@ -1,7 +1,7 @@
 // metadata_version: 1
 // purpose: Read staged path actions and numerical changes from NUL-delimited Git output.
 // owner: unassigned
-// related_adrs: [ADR-0007, ADR-0008, ADR-0011]
+// related_adrs: [ADR-0007, ADR-0008, ADR-0011, ADR-0047]
 import 'dart:convert';
 
 import 'git.dart';
@@ -28,8 +28,10 @@ class Change {
   final String? lfsOid;
   String get display {
     final label = oldPath == null ? path : '$oldPath -> $path';
-    return RegExp(r'[|\r\n\t]').hasMatch(label)
-        ? jsonEncode(label).replaceAll('|', r'\u007c')
+    return RegExp(r'[|@\r\n\t]').hasMatch(label)
+        ? jsonEncode(label)
+              .replaceAll('|', r'\u007c')
+              .replaceAll('@', r'\u0040')
         : label;
   }
 }

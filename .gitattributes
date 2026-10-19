@@ -1,0 +1,2 @@
+# Preserve intentional Markdown hard breaks in the byte-preserved imported handoff.
+docs/reference/Macro_App_Auth_UI_UX_Codex_Handoff.md whitespace=-blank-at-eol

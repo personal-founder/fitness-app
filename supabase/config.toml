@@ -1,0 +1,25 @@
+# metadata_version: 1
+# purpose: "Maintain config.toml for Macro App authentication."
+# owner: unassigned
+# related_adrs: [ADR-0014]
+# Local development only; paid hosted services are never activated by this file.
+project_id = "macro-app-local"
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+[db]
+port = 54322
+major_version = 17
+[auth]
+enabled = true
+site_url = "http://localhost:8080"
+additional_redirect_urls = ["http://localhost:8080/", "macroapp://auth-callback"]
+minimum_password_length = 12
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+[storage]
+enabled = true
+file_size_limit = "5MiB"

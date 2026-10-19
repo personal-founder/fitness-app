@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "lib/features/auth/entry_field.dart",
+      "max_lines": 150,
+      "reason": "Keep input, password-manager and PIN semantics in one shared field.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/welcome/profile_share.dart",
+      "max_lines": 150,
+      "reason": "Keep the modal route lifecycle and account-bound dismissal together.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/legacy_pin_test.dart",
+      "max_lines": 150,
+      "reason": "Keep legacy native record and account reauthentication regression cases together.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/profile_qr_test.dart",
+      "max_lines": 150,
+      "reason": "Keep the public contract and actual modal lifecycle regression cases together.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/theme_preference_test.dart",
+      "max_lines": 150,
+      "reason": "Keep theme persistence, storage-failure and SQLite-boundary cases together.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "scripts/verify-demo-web.cjs",
+      "max_lines": 150,
+      "reason": "Keep the rendered demo journey and independent QR pixel decoding together.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "test/demo_flow_widget_test.dart",
+      "max_lines": 150,
+      "reason": "Keep the cohesive demo bootstrap or credential journey and failure handling together.",
+      "adr": "ADR-0027"
+    }
+  ]
+}

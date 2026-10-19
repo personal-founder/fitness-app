@@ -1,0 +1,5 @@
+metadata_version: 1
+purpose: "Maintain public.example.json for Macro App authentication."
+owner: unassigned
+related_adrs: [ADR-0014]
+target: "public.example.json"

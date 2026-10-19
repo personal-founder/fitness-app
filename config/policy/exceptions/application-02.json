@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "lib/features/auth/lock_card.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/auth/session_controller.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/welcome/account_identity.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/welcome/background_layer.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/welcome/profile_avatar.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/welcome/welcome_page.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "linux/CMakeLists.txt",
+      "max_lines": 128,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "linux/flutter/CMakeLists.txt",
+      "max_lines": 88,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    }
+  ]
+}

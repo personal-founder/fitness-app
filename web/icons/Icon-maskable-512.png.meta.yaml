@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: "Supply Flutter platform runner configuration or assets."
+owner: unassigned
+related_adrs: [ADR-0028]
+target: "Icon-maskable-512.png"
+generated_by: Flutter 3.47.7 tooling; platform edits recorded in the work log.

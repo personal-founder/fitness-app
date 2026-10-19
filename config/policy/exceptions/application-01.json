@@ -5,6 +5,48 @@
       "max_lines": 150,
       "reason": "Keep the complete required-target host matrix together as one coherent registry.",
       "adr": "ADR-0008"
+    },
+    {
+      "path": "docs/reference/Macro_App_Auth_UI_UX_Codex_Handoff.md",
+      "max_lines": 555,
+      "reason": "Imported approved reference preserved byte-for-byte; splitting would alter the supplied source. Revisit when replaced by a new approved source.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "ios/Runner.xcodeproj/project.pbxproj",
+      "max_lines": 651,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+      "max_lines": 119,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "max_lines": 122,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "ios/Runner/Info.plist",
+      "max_lines": 77,
+      "reason": "Generated Flutter/tool-specific source or lock format; preserve regeneration and tooling. Revisit through its generator, not arbitrary splitting.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/core/security/app_lock.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
+    },
+    {
+      "path": "lib/features/auth/credential_form.dart",
+      "max_lines": 150,
+      "reason": "Cohesive authentication responsibility within the 150-line extension; rationale in docs/changes/2026-10-19-auth-foundation.md.",
+      "adr": "ADR-0027"
     }
   ]
 }

@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: Associate metadata with the existing Git setup record without altering it.
+owner: unassigned
+related_adrs: [ADR-0005]
+target: 2026-10-19-git-setup.md
+source: Existing project record; no new Git action is asserted by this sidecar.

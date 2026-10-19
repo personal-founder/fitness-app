@@ -1,0 +1,5 @@
+metadata_version: 1
+purpose: Record cohesive source extensions for the PIN theme and QR milestone.
+owner: unassigned
+related_adrs: [ADR-0027]
+target: application-05.json

@@ -1,0 +1,6 @@
+metadata_version: 1
+purpose: Preserve the initial combined architecture record before atomic normalization.
+owner: unassigned
+related_adrs: [ADR-0001]
+target: legacy-auth-foundation-record.md
+source: Original local ADR-0001 text preserved unchanged on 2026-10-19.

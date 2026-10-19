@@ -1,0 +1,5 @@
+metadata_version: 1
+purpose: Bounded application exception registry fragment.
+owner: unassigned
+related_adrs: [ADR-0008]
+target: application-03.json

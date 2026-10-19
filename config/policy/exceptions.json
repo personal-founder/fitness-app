@@ -4,6 +4,10 @@
     "config/policy/exceptions/tooling-01.json",
     "config/policy/exceptions/tooling-02.json",
     "config/policy/exceptions/tooling-03.json",
-    "config/policy/exceptions/application-01.json"
+    "config/policy/exceptions/application-01.json",
+    "config/policy/exceptions/application-02.json",
+    "config/policy/exceptions/application-03.json",
+    "config/policy/exceptions/application-04.json",
+    "config/policy/exceptions/application-05.json"
   ]
 }
